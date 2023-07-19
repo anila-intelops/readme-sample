@@ -35,4 +35,4 @@ If you do not want to use the default value, you have the option to modify the a
 helm upgrade -i kubviz-agent kubviz/agent -f values.yaml -n kubviz
 ```
 
-> **Tip**: You can use the default [values.yaml](https://github.com/intelops/kubviz/blob/main/charts/agent/values.yaml)
+> **Tip**: You can use the default [values.yaml](https://github.com/intelops/kubviz/blob/main/charts/agent/values.yaml#L60)
