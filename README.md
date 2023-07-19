@@ -37,3 +37,23 @@ helm upgrade -i kubviz-agent kubviz/agent -f values.yaml -n kubviz
 ```
 
 > **Tip**: You can use the default [values.yaml](https://github.com/intelops/kubviz/blob/main/charts/agent/values.yaml)
+
+##### Deploying Agent on a Different Kubernetes Cluster:
+1. Run the following command to deploy the kubeviz agent:
+
+```bash
+helm upgrade -i kubviz-agent kubviz/agent -n kubviz --set nats.host=<NATS IP Address> --set "nats.auth.token=$token"   
+```
+2. Replace "NATS IP Address" with the IP address of your NATS server.
+
+Parameter | Description | Default
+--------- | ----------- | -------
+`nats.host` | nats host | `kubviz-client-nats`
+`git_bridge.enabled` | If true, create git_bridge | `false`
+`git_bridge.ingress.hosts[0].host` | git_bridge ingress host name | `gitbridge.local`
+`git_bridge.ingress.hosts[0].paths[0].path` | git_bridge ingress host path | `/`
+`git_bridge.ingress.hosts[0].paths[0].pathType` | git_bridge ingress host path type | `Prefix`
+`container_bridge.enabled` | If true, create container_bridge | `false`
+`container_bridge.ingress.hosts[0].host` | container_bridge ingress host name | `containerbridge.local`
+`container_bridge.ingress.hosts[0].paths[0].path` | container_bridge ingress host path | `/`
+`container_bridge.ingress.hosts[0].paths[0].pathType` | container_bridge ingress host path type | `Prefix`
