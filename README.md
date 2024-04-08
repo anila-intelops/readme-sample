@@ -49,13 +49,13 @@ Resource quota check | Checks if resource quotas (CPU & memory) are available |
 
 ### Deployment Check
 
-- **Purpose of Daemonset Check:** Assesses the success of application deployments in the Kubernetes cluster, ensuring configurations and services are correctly launched.
+- **Purpose of Deployment Check:** Assesses the success of application deployments in the Kubernetes cluster, ensuring configurations and services are correctly launched.
 
 - Initiates a test deployment, evaluates the deployment process, service accessibility, and rollbacks if necessary, to ensure operational integrity.
 
 ### DNS Check
 
-- **Purpose of Daemonset Check:** Ensures that DNS resolution is working correctly within the Kubernetes cluster, critical for service discovery and network communication.
+- **Purpose of DNS Check:** Ensures that DNS resolution is working correctly within the Kubernetes cluster, critical for service discovery and network communication.
 
 - Performs DNS lookups to validate the responsiveness and accuracy of the cluster's DNS service, identifying potential issues early.
 
@@ -106,7 +106,7 @@ docker push my.repository/repo/test-check
 
 - Pod status check is a custom check that requires manual enabling.
 
-- **Purpose of Daemonset Check:** Monitors the health and status of pods within the Kubernetes cluster to ensure they are running and stable.
+- **Purpose of Pod Status Check:** Monitors the health and status of pods within the Kubernetes cluster to ensure they are running and stable.
 
 - This check will run every 5 minutes. You can change this by modifying the `runInterval`.
 
@@ -132,8 +132,7 @@ docker push my.repository/repo/test-check
 
 ### Pod Restart Check
 
-- Pod status check is a custom check that requires manual enabling.
-
+- Pod restart check is a custom check that requires manual enabling.
 
 - The Pod Restarts Check checks for excessive pod restarts in a given `POD_NAMESPACE`.
 
